@@ -189,5 +189,18 @@ namespace TRANSPORTADORA.CAMADAS
         {
             
         }
+
+        private void DGFrete_DoubleClick(object sender, EventArgs e)
+        {
+            txtID.Text = DGFrete.SelectedRows[0].Cells["id"].Value.ToString();
+            txtProduto.Text = DGFrete.SelectedRows[0].Cells["produto"].Value.ToString();
+            txtLocalPartida.Text = DGFrete.SelectedRows[0].Cells["localEntrega"].Value.ToString();
+            txtLocalEntrega.Text = DGFrete.SelectedRows[0].Cells["localPartida"].Value.ToString();
+            DTData.Text = DGFrete.SelectedRows[0].Cells["data"].Value.ToString();
+            /*txtValor.Text = DGFrete.SelectedRows[0].Cells["valorFrete"].Value.ToString();
+            txtIDTransportadora.Text = DGFrete.SelectedRows[0].Cells["transportadoraFK"].Value.ToString();
+            txtIDMotorista.Text = DGFrete.SelectedRows[0].Cells["motoristaFK"].Value.ToString();*/
+
+        }
     }
 }

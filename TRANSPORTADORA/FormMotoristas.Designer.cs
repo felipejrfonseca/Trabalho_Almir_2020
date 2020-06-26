@@ -102,6 +102,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(373, 46);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(71, 20);
@@ -177,6 +178,7 @@
             this.DGMotorista.Size = new System.Drawing.Size(868, 255);
             this.DGMotorista.TabIndex = 9;
             this.DGMotorista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMotorista_CellContentClick_1);
+            this.DGMotorista.DoubleClick += new System.EventHandler(this.DGMotorista_DoubleClick);
             // 
             // FormMotoristas
             // 

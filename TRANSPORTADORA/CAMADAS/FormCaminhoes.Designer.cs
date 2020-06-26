@@ -68,6 +68,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(279, 50);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(106, 20);
@@ -93,6 +94,7 @@
             this.DGCaminhoes.Size = new System.Drawing.Size(884, 262);
             this.DGCaminhoes.TabIndex = 28;
             this.DGCaminhoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGCaminhoes_CellContentClick);
+            this.DGCaminhoes.DoubleClick += new System.EventHandler(this.DGCaminhoes_DoubleClick);
             // 
             // BtnExcluir
             // 

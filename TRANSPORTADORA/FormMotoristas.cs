@@ -111,5 +111,14 @@ namespace TRANSPORTADORA
         {
 
         }
+
+        private void DGMotorista_DoubleClick(object sender, EventArgs e)
+        {
+            txtID.Text = DGMotorista.SelectedRows[0].Cells["id"].Value.ToString();
+            txtNome.Text = DGMotorista.SelectedRows[0].Cells["nome"].Value.ToString();
+            txtTelefone.Text = DGMotorista.SelectedRows[0].Cells["telefone"].Value.ToString();
+            txtSalario.Text = DGMotorista.SelectedRows[0].Cells["salario"].Value.ToString();
+            txtValidadeCnh.Text = DGMotorista.SelectedRows[0].Cells["validadeCnh"].Value.ToString();
+        }
     }
 }

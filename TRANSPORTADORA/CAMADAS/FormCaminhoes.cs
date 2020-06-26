@@ -142,5 +142,16 @@ namespace TRANSPORTADORA.CAMADAS
             DGCaminhoes.DataSource = "";
             DGCaminhoes.DataSource = dalCaminhoes.Select();
         }
+
+        private void DGCaminhoes_DoubleClick(object sender, EventArgs e)
+        {
+            txtID.Text = DGCaminhoes.SelectedRows[0].Cells["id"].Value.ToString();
+            txtPlaca.Text = DGCaminhoes.SelectedRows[0].Cells["placa"].Value.ToString();
+            txtModelo.Text = DGCaminhoes.SelectedRows[0].Cells["modelo"].Value.ToString();
+            /*txtIdCor.Text = DGCaminhoes.SelectedRows[0].Cells["corFK"].Value.ToString();
+            cmbCor.Text = DGCaminhoes.SelectedRows[0].Cells["corFK"].Value.ToString();
+            txtIdMotorista.Text = DGCaminhoes.SelectedRows[0].Cells["motoristaFK"].Value.ToString();
+            cmbMotorista.Text = DGCaminhoes.SelectedRows[0].Cells["motoristaFK"].Value.ToString();*/
+        }
     }
 }

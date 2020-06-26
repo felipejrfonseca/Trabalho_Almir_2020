@@ -53,8 +53,7 @@ namespace TRANSPORTADORA.CAMADAS
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            limparcontrole();
+        {       
             
             CAMADAS.MODEL.Transportadora transportadora = new CAMADAS.MODEL.Transportadora();
 
@@ -63,6 +62,8 @@ namespace TRANSPORTADORA.CAMADAS
 
             CAMADAS.DAL.Transportadora dalTransportadora = new CAMADAS.DAL.Transportadora();
             dalTransportadora.Update(transportadora);
+
+            limparcontrole(); 
 
             DGTransportadora.DataSource = "";
             DGTransportadora.DataSource = dalTransportadora.Select();
@@ -88,6 +89,18 @@ namespace TRANSPORTADORA.CAMADAS
             {
                 MessageBox.Show("TODOS OS CAMPOS DEVEM SER PREENCHIDOS", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void DGTransportadora_DoubleClick(object sender, EventArgs e)
+        {            
+            txtID.Text = DGTransportadora.SelectedRows[0].Cells["id"].Value.ToString();
+            txtTransportadora.Text = DGTransportadora.SelectedRows[0].Cells["nomeTransportadora"].Value.ToString();
+            
+        }
+
+        private void DGTransportadora_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

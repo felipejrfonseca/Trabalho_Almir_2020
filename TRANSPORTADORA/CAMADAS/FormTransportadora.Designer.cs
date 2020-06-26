@@ -59,6 +59,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(339, 50);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(71, 20);
@@ -82,6 +83,8 @@
             this.DGTransportadora.Name = "DGTransportadora";
             this.DGTransportadora.Size = new System.Drawing.Size(884, 262);
             this.DGTransportadora.TabIndex = 20;
+            this.DGTransportadora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGTransportadora_CellContentClick);
+            this.DGTransportadora.DoubleClick += new System.EventHandler(this.DGTransportadora_DoubleClick);
             // 
             // BtnExcluir
             // 
