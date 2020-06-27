@@ -36,7 +36,15 @@
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnInserir = new System.Windows.Forms.Button();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.GbBuscar = new System.Windows.Forms.GroupBox();
+            this.TxtFiltro = new System.Windows.Forms.TextBox();
+            this.BtnFiltrar = new System.Windows.Forms.Button();
+            this.RBNome = new System.Windows.Forms.RadioButton();
+            this.RBId = new System.Windows.Forms.RadioButton();
+            this.LBFiltro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGTransportadora)).BeginInit();
+            this.GbBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTransportadora
@@ -89,7 +97,7 @@
             // BtnExcluir
             // 
             this.BtnExcluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExcluir.Location = new System.Drawing.Point(19, 164);
+            this.BtnExcluir.Location = new System.Drawing.Point(19, 156);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(88, 38);
             this.BtnExcluir.TabIndex = 19;
@@ -100,7 +108,7 @@
             // BtnEditar
             // 
             this.BtnEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.Location = new System.Drawing.Point(19, 98);
+            this.BtnEditar.Location = new System.Drawing.Point(19, 90);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(88, 38);
             this.BtnEditar.TabIndex = 18;
@@ -111,7 +119,7 @@
             // BtnInserir
             // 
             this.BtnInserir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInserir.Location = new System.Drawing.Point(19, 32);
+            this.BtnInserir.Location = new System.Drawing.Point(19, 24);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.Size = new System.Drawing.Size(88, 38);
             this.BtnInserir.TabIndex = 17;
@@ -119,12 +127,91 @@
             this.BtnInserir.UseVisualStyleBackColor = true;
             this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.Location = new System.Drawing.Point(19, 216);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(88, 38);
+            this.BtnBuscar.TabIndex = 25;
+            this.BtnBuscar.Text = "BUSCAR";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // GbBuscar
+            // 
+            this.GbBuscar.Controls.Add(this.LBFiltro);
+            this.GbBuscar.Controls.Add(this.RBId);
+            this.GbBuscar.Controls.Add(this.BtnFiltrar);
+            this.GbBuscar.Controls.Add(this.RBNome);
+            this.GbBuscar.Controls.Add(this.TxtFiltro);
+            this.GbBuscar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GbBuscar.ForeColor = System.Drawing.Color.White;
+            this.GbBuscar.Location = new System.Drawing.Point(191, 129);
+            this.GbBuscar.Name = "GbBuscar";
+            this.GbBuscar.Size = new System.Drawing.Size(573, 125);
+            this.GbBuscar.TabIndex = 26;
+            this.GbBuscar.TabStop = false;
+            this.GbBuscar.Text = "FILTRO:";
+            this.GbBuscar.Visible = false;
+            // 
+            // TxtFiltro
+            // 
+            this.TxtFiltro.Location = new System.Drawing.Point(27, 68);
+            this.TxtFiltro.Name = "TxtFiltro";
+            this.TxtFiltro.Size = new System.Drawing.Size(394, 20);
+            this.TxtFiltro.TabIndex = 27;
+            // 
+            // BtnFiltrar
+            // 
+            this.BtnFiltrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFiltrar.ForeColor = System.Drawing.Color.Black;
+            this.BtnFiltrar.Location = new System.Drawing.Point(467, 58);
+            this.BtnFiltrar.Name = "BtnFiltrar";
+            this.BtnFiltrar.Size = new System.Drawing.Size(88, 38);
+            this.BtnFiltrar.TabIndex = 27;
+            this.BtnFiltrar.Text = "FILTRAR";
+            this.BtnFiltrar.UseVisualStyleBackColor = true;
+            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
+            // 
+            // RBNome
+            // 
+            this.RBNome.AutoSize = true;
+            this.RBNome.Location = new System.Drawing.Point(71, 19);
+            this.RBNome.Name = "RBNome";
+            this.RBNome.Size = new System.Drawing.Size(56, 18);
+            this.RBNome.TabIndex = 29;
+            this.RBNome.Text = "NOME";
+            this.RBNome.UseVisualStyleBackColor = true;
+            this.RBNome.CheckedChanged += new System.EventHandler(this.RBNome_CheckedChanged);
+            // 
+            // RBId
+            // 
+            this.RBId.AutoSize = true;
+            this.RBId.Location = new System.Drawing.Point(30, 19);
+            this.RBId.Name = "RBId";
+            this.RBId.Size = new System.Drawing.Size(35, 18);
+            this.RBId.TabIndex = 30;
+            this.RBId.Text = "ID";
+            this.RBId.UseVisualStyleBackColor = true;
+            this.RBId.CheckedChanged += new System.EventHandler(this.RBId_CheckedChanged);
+            // 
+            // LBFiltro
+            // 
+            this.LBFiltro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBFiltro.Location = new System.Drawing.Point(27, 49);
+            this.LBFiltro.Name = "LBFiltro";
+            this.LBFiltro.Size = new System.Drawing.Size(334, 16);
+            this.LBFiltro.TabIndex = 31;
+            // 
             // FormTransportadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(908, 563);
+            this.Controls.Add(this.GbBuscar);
+            this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.txtTransportadora);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtID);
@@ -137,6 +224,8 @@
             this.Text = "Transportadora";
             this.Load += new System.EventHandler(this.FormTransportadora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGTransportadora)).EndInit();
+            this.GbBuscar.ResumeLayout(false);
+            this.GbBuscar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +241,12 @@
         private System.Windows.Forms.Button BtnExcluir;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnInserir;
+        private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.GroupBox GbBuscar;
+        private System.Windows.Forms.Label LBFiltro;
+        private System.Windows.Forms.RadioButton RBId;
+        private System.Windows.Forms.Button BtnFiltrar;
+        private System.Windows.Forms.RadioButton RBNome;
+        private System.Windows.Forms.TextBox TxtFiltro;
     }
 }

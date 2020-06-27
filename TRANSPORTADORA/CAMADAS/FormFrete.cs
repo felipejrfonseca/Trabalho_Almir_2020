@@ -15,6 +15,7 @@ namespace TRANSPORTADORA.CAMADAS
         public FormFrete()
         {
             InitializeComponent();
+            limparcontrole();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -74,36 +75,58 @@ namespace TRANSPORTADORA.CAMADAS
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            int idFrete = Convert.ToInt32(txtID.Text);
-            CAMADAS.DAL.Frete dalFrete = new CAMADAS.DAL.Frete();
-            dalFrete.Delete(idFrete);
+            CAMADAS.BLL.Frete bllFrete = new CAMADAS.BLL.Frete();
+
+            if(txtID.Text != "-1")
+            {
+                DialogResult resp = MessageBox.Show("Deseja Excluir Realmente Frete?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if(resp == DialogResult.Yes)
+                {
+                    int idFrete = Convert.ToInt32(txtID.Text);
+                    bllFrete.Delete(idFrete);
+                }
+                
+            }
+
+            else
+            {
+                MessageBox.Show("Nenhum Frete Selecionado Para Exclusão!", "Excluir Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             limparcontrole();
 
             DGFrete.DataSource = "";
-            DGFrete.DataSource = dalFrete.Select();
+            DGFrete.DataSource = bllFrete.Select();                       
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            CAMADAS.MODEL.Frete frete = new CAMADAS.MODEL.Frete();
+            if(txtID.Text != "-1")
+            {
+                CAMADAS.MODEL.Frete frete = new CAMADAS.MODEL.Frete();
 
-            frete.id = Convert.ToInt32(txtID.Text);
-            frete.produto = txtProduto.Text;
-            frete.localPartida = txtLocalPartida.Text;
-            frete.localEntrega = txtLocalEntrega.Text;
-            frete.data = Convert.ToDateTime(DTData.Text);
-            frete.valor = Convert.ToSingle(txtValor.Text);
-            frete.transportadora = Convert.ToInt32(txtIDTransportadora.Text);
-            frete.motorista = Convert.ToInt32(txtIDMotorista.Text);
+                frete.id = Convert.ToInt32(txtID.Text);
+                frete.produto = txtProduto.Text;
+                frete.localPartida = txtLocalPartida.Text;
+                frete.localEntrega = txtLocalEntrega.Text;
+                frete.data = Convert.ToDateTime(DTData.Text);
+                frete.valor = Convert.ToSingle(txtValor.Text);
+                frete.transportadora = Convert.ToInt32(txtIDTransportadora.Text);
+                frete.motorista = Convert.ToInt32(txtIDMotorista.Text);
 
-            CAMADAS.DAL.Frete dalFrete = new CAMADAS.DAL.Frete();
-            dalFrete.Update(frete);
+                CAMADAS.BLL.Frete bllFrete = new CAMADAS.BLL.Frete();
+                bllFrete.Update(frete);
 
-            limparcontrole();
+                limparcontrole();
 
-            DGFrete.DataSource = "";
-            DGFrete.DataSource = dalFrete.Select();
+                DGFrete.DataSource = "";
+                DGFrete.DataSource = bllFrete.Select();
+            }
+            
+            else
+            {
+                MessageBox.Show("Nenhum Frete Selecionado para Edição", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void limparcontrole()
@@ -124,6 +147,7 @@ namespace TRANSPORTADORA.CAMADAS
         {
             if (txtProduto.Text != "" && txtLocalEntrega.Text != "" && txtLocalPartida.Text != "" && txtLocalEntrega.Text != "" && DTData.Text != "" && txtValor.Text != "" && txtIDTransportadora.Text != "" && txtIDMotorista.Text != "")
             {
+                CAMADAS.BLL.Frete bllfrete = new CAMADAS.BLL.Frete();
                 CAMADAS.MODEL.Frete frete = new CAMADAS.MODEL.Frete();
 
                 frete.produto = txtProduto.Text;
@@ -134,13 +158,12 @@ namespace TRANSPORTADORA.CAMADAS
                 frete.transportadora = Convert.ToInt32(txtIDTransportadora.Text);
                 frete.motorista = Convert.ToInt32(txtIDMotorista.Text);
 
-                CAMADAS.DAL.Frete dalFrete = new CAMADAS.DAL.Frete();
-                dalFrete.Inserir(frete);
-
+                bllfrete.Insert(frete);
+                
                 limparcontrole();
 
                 DGFrete.DataSource = "";
-                DGFrete.DataSource = dalFrete.Select();
+                DGFrete.DataSource = bllfrete.Select();
                 
             }
 
@@ -197,9 +220,9 @@ namespace TRANSPORTADORA.CAMADAS
             txtLocalPartida.Text = DGFrete.SelectedRows[0].Cells["localEntrega"].Value.ToString();
             txtLocalEntrega.Text = DGFrete.SelectedRows[0].Cells["localPartida"].Value.ToString();
             DTData.Text = DGFrete.SelectedRows[0].Cells["data"].Value.ToString();
-            /*txtValor.Text = DGFrete.SelectedRows[0].Cells["valorFrete"].Value.ToString();
-            txtIDTransportadora.Text = DGFrete.SelectedRows[0].Cells["transportadoraFK"].Value.ToString();
-            txtIDMotorista.Text = DGFrete.SelectedRows[0].Cells["motoristaFK"].Value.ToString();*/
+            txtValor.Text = DGFrete.SelectedRows[0].Cells["valor"].Value.ToString();
+            txtIDTransportadora.Text = DGFrete.SelectedRows[0].Cells["transportadora"].Value.ToString();
+            txtIDMotorista.Text = DGFrete.SelectedRows[0].Cells["motorista"].Value.ToString();
 
         }
     }

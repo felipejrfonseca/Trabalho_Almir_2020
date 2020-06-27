@@ -15,6 +15,7 @@ namespace TRANSPORTADORA.CAMADAS
         public FormCaminhoes()
         {
             InitializeComponent();
+            limparcontrole();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -63,20 +64,21 @@ namespace TRANSPORTADORA.CAMADAS
         {
             if (txtPlaca.Text != "" && txtModelo.Text != "" && txtIdCor.Text != "" && txtModelo.Text != "")
             {
-                CAMADAS.MODEL.Caminhao caminhao = new CAMADAS.MODEL.Caminhao();
+                CAMADAS.BLL.Caminhoes bllCaminhoes = new CAMADAS.BLL.Caminhoes();
+                CAMADAS.MODEL.Caminhao caminhoes = new CAMADAS.MODEL.Caminhao();
 
-                caminhao.placa = txtPlaca.Text;
-                caminhao.modelo = txtModelo.Text;
-                caminhao.cor = Convert.ToInt32(txtIdCor.Text);
-                caminhao.motorista = Convert.ToInt32(txtIdMotorista.Text);
-
-                CAMADAS.DAL.Caminhoes dalCaminhoes = new CAMADAS.DAL.Caminhoes();
-                dalCaminhoes.Insert(caminhao);
-
-                DGCaminhoes.DataSource = "";
-                DGCaminhoes.DataSource = dalCaminhoes.Select();
+                caminhoes.placa = txtPlaca.Text;
+                caminhoes.modelo = txtModelo.Text;
+                caminhoes.cor = Convert.ToInt32(txtIdCor.Text);
+                caminhoes.motorista = Convert.ToInt32(txtIdMotorista.Text);
+                bllCaminhoes.Insert(caminhoes);
                 
                 limparcontrole();
+
+                DGCaminhoes.DataSource = "";
+                DGCaminhoes.DataSource = bllCaminhoes.Select();
+
+                MessageBox.Show("CAMINHÃO INSERIDO COM SUCESSO!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             else
@@ -114,33 +116,57 @@ namespace TRANSPORTADORA.CAMADAS
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            CAMADAS.MODEL.Caminhao caminhao = new CAMADAS.MODEL.Caminhao();
+            if(txtID.Text != "-1")
+            {
+                CAMADAS.MODEL.Caminhao caminhao = new CAMADAS.MODEL.Caminhao();
 
-            caminhao.id = Convert.ToInt32(txtID.Text);
-            caminhao.placa = txtPlaca.Text;
-            caminhao.modelo = txtModelo.Text;
-            caminhao.cor = Convert.ToInt32(txtIdCor.Text);
-            caminhao.motorista = Convert.ToInt32(txtIdMotorista.Text);
+                caminhao.id = Convert.ToInt32(txtID.Text);
+                caminhao.placa = txtPlaca.Text;
+                caminhao.modelo = txtModelo.Text;
+                caminhao.cor = Convert.ToInt32(txtIdCor.Text);
+                caminhao.motorista = Convert.ToInt32(txtIdMotorista.Text);
 
-            CAMADAS.DAL.Caminhoes dalcaminhao = new CAMADAS.DAL.Caminhoes();
-            dalcaminhao.Update(caminhao);
+                CAMADAS.BLL.Caminhoes bllCaminhoes = new CAMADAS.BLL.Caminhoes();
+                bllCaminhoes.Update(caminhao);
 
-            limparcontrole();
+                MessageBox.Show("Alteração Realizada com Sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                limparcontrole();
 
-            DGCaminhoes.DataSource = "";
-            DGCaminhoes.DataSource = dalcaminhao.Select();
+                DGCaminhoes.DataSource = "";
+                DGCaminhoes.DataSource = bllCaminhoes.Select();
+            }
+
+            else
+            {
+                MessageBox.Show("Nenhum Caminhão Selecionado para Edição", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                        
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            int idCaminhoes = Convert.ToInt32(txtID.Text);
-            CAMADAS.DAL.Caminhoes dalCaminhoes = new CAMADAS.DAL.Caminhoes();
-            dalCaminhoes.Delete(idCaminhoes);
+            CAMADAS.BLL.Caminhoes bllCaminhoes = new CAMADAS.BLL.Caminhoes();
+
+            if (txtID.Text != "-1")
+            {
+                DialogResult resp = MessageBox.Show("Deseja Excluir Realmente Caminhão?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if(resp == DialogResult.Yes)
+                {
+                    int idCaminhoes = Convert.ToInt32(txtID.Text);                    
+                    bllCaminhoes.Delete(idCaminhoes);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Nenhum Caminhão Selecionado Para Exclusão!", "Excluir Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             limparcontrole();
-
+                       
             DGCaminhoes.DataSource = "";
-            DGCaminhoes.DataSource = dalCaminhoes.Select();
+            DGCaminhoes.DataSource = bllCaminhoes.Select();                       
         }
 
         private void DGCaminhoes_DoubleClick(object sender, EventArgs e)

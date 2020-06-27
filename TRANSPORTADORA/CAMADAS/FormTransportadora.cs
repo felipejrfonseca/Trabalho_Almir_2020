@@ -15,6 +15,7 @@ namespace TRANSPORTADORA.CAMADAS
         public FormTransportadora()
         {
             InitializeComponent();
+            limparcontrole();
         }
 
         private void FormTransportadora_Load(object sender, EventArgs e)
@@ -35,14 +36,17 @@ namespace TRANSPORTADORA.CAMADAS
         {       
             if (txtTransportadora.Text != "")
             {
+                CAMADAS.BLL.Transportadora bllTransportadora = new CAMADAS.BLL.Transportadora();
                 CAMADAS.MODEL.Transportadora transportadora = new CAMADAS.MODEL.Transportadora();
                 transportadora.nomeTransportadora = txtTransportadora.Text;
-                CAMADAS.DAL.Transportadora dalTransportadora = new CAMADAS.DAL.Transportadora();
-                dalTransportadora.Inserir(transportadora);
+
+                bllTransportadora.Insert(transportadora);
+
+                limparcontrole();
 
                 DGTransportadora.DataSource = "";
-                DGTransportadora.DataSource = dalTransportadora.Select();
-                limparcontrole();
+                DGTransportadora.DataSource = bllTransportadora.Select();
+                
             }
 
             else 
@@ -54,35 +58,52 @@ namespace TRANSPORTADORA.CAMADAS
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {       
-            
-            CAMADAS.MODEL.Transportadora transportadora = new CAMADAS.MODEL.Transportadora();
-
-            transportadora.id = Convert.ToInt32(txtID.Text);
-            transportadora.nomeTransportadora = txtTransportadora.Text;
-
-            CAMADAS.DAL.Transportadora dalTransportadora = new CAMADAS.DAL.Transportadora();
-            dalTransportadora.Update(transportadora);
-
-            limparcontrole(); 
-
-            DGTransportadora.DataSource = "";
-            DGTransportadora.DataSource = dalTransportadora.Select();
-                
-        }
-
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-
-            if (txtID != null)
+            if(txtID.Text != "-1")
             {
-                int idTransportadora = Convert.ToInt32(txtID.Text);
-                CAMADAS.DAL.Transportadora dalTransportadora = new CAMADAS.DAL.Transportadora();
-                dalTransportadora.Delete(idTransportadora);
+                CAMADAS.MODEL.Transportadora transportadora = new CAMADAS.MODEL.Transportadora();
+                transportadora.id = Convert.ToInt32(txtID.Text);
+                transportadora.nomeTransportadora = txtTransportadora.Text;
+
+                CAMADAS.BLL.Transportadora bllTransportadora = new CAMADAS.BLL.Transportadora();
+                bllTransportadora.Update(transportadora);
 
                 limparcontrole();
 
                 DGTransportadora.DataSource = "";
-                DGTransportadora.DataSource = dalTransportadora.Select();
+                DGTransportadora.DataSource = bllTransportadora.Select();
+            }
+
+            else
+            {
+                MessageBox.Show("Nenhuma Transportadora Foi Selecionada para Edição", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            CAMADAS.BLL.Transportadora bllTransportadora = new CAMADAS.BLL.Transportadora();
+
+            if (txtID.Text != null)
+            {
+                if(txtID.Text != "-1")
+                {
+                    DialogResult resp = MessageBox.Show("Deseja Excluir Realmente Transportadora?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    if (resp == DialogResult.Yes)
+                    {
+                        int idTransportadora = Convert.ToInt32(txtID.Text);
+                        bllTransportadora.Delete(idTransportadora);
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Nenhuma Transportadora Selecionada Para Exclusão!", "Excluir Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+                limparcontrole();
+
+                DGTransportadora.DataSource = "";
+                DGTransportadora.DataSource = bllTransportadora.Select();
             }
 
             else
@@ -101,6 +122,52 @@ namespace TRANSPORTADORA.CAMADAS
         private void DGTransportadora_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            GbBuscar.Visible = !GbBuscar.Visible;
+
+            CAMADAS.BLL.Transportadora bllTransportadora = new CAMADAS.BLL.Transportadora();
+            DGTransportadora.DataSource = "";
+            DGTransportadora.DataSource = bllTransportadora.Select();
+        }
+
+        private void RBId_CheckedChanged(object sender, EventArgs e)
+        {
+            LBFiltro.Text = "Informe o ID da Transportadora: ";
+            TxtFiltro.Text = "";
+            TxtFiltro.Focus();
+        }
+
+        private void RBNome_CheckedChanged(object sender, EventArgs e)
+        {
+            LBFiltro.Text = "Informe o Nome da Transportadora:";
+            TxtFiltro.Text = "";
+            TxtFiltro.Focus();
+        }
+
+        private void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+            CAMADAS.BLL.Transportadora bllTransportadora = new CAMADAS.BLL.Transportadora();
+            List<CAMADAS.MODEL.Transportadora> listTransportadora = new List<CAMADAS.MODEL.Transportadora>();
+            
+            if(RBId.Checked)
+            {
+                int id = Convert.ToInt32(TxtFiltro.Text);
+                listTransportadora = bllTransportadora.SelectByID(id);
+
+                DGTransportadora.DataSource = "";
+                DGTransportadora.DataSource = bllTransportadora.SelectByID(id);
+            }
+            else if(RBNome.Checked)
+            {
+                string nome = TxtFiltro.Text;
+                listTransportadora = bllTransportadora.SelectByNome(nome);
+
+                DGTransportadora.DataSource = "";
+                DGTransportadora.DataSource = bllTransportadora.SelectByNome(nome);
+            }
         }
     }
 }

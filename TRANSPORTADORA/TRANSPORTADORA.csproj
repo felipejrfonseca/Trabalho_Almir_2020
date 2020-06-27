@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAMADAS\BLL\Caminhoes.cs" />
+    <Compile Include="CAMADAS\BLL\Frete.cs" />
+    <Compile Include="CAMADAS\BLL\Motorista.cs" />
+    <Compile Include="CAMADAS\BLL\Transportadora.cs" />
     <Compile Include="CAMADAS\DAL\Caminhoes.cs" />
     <Compile Include="CAMADAS\DAL\Cor.cs" />
     <Compile Include="CAMADAS\DAL\Frete.cs" />
@@ -79,6 +83,7 @@
       <DependentUpon>FormFrete.cs</DependentUpon>
     </Compile>
     <Compile Include="CAMADAS\MODEL\Caminhao.cs" />
+    <Compile Include="CAMADAS\MODEL\Combustivel.cs" />
     <Compile Include="CAMADAS\MODEL\Conexao.cs" />
     <Compile Include="CAMADAS\MODEL\Cor.cs" />
     <Compile Include="CAMADAS\MODEL\Frete.cs" />
@@ -404,9 +409,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CAMADAS\BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

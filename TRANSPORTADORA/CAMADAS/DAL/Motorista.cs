@@ -52,6 +52,83 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             return listMotorista;
         }
 
+        public List<MODEL.Motorista> SelectByID(int id)
+        {
+            List<MODEL.Motorista> listMotorista = new List<MODEL.Motorista>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT *FROM Motorista WHERE id=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dados.Read())
+                {
+                    MODEL.Motorista motorista = new MODEL.Motorista();
+                    motorista.id = Convert.ToInt32(dados["id"].ToString());
+                    motorista.nome = dados["nome"].ToString();
+                    motorista.telefone = dados["telefone"].ToString();
+                    motorista.validadeCnh = Convert.ToDateTime(dados["validadeCnh"].ToString());
+                    motorista.salario = Convert.ToSingle(dados["salario"].ToString());
+                    //motorista.comissao = Convert.ToSingle(dados["comissao"].ToString());
+
+                    listMotorista.Add(motorista);
+                }
+            }
+
+            catch
+            {
+                Console.WriteLine("ERRO AO CONSULTAR O BANCO DE DADOS!");
+            }
+            finally
+            {
+
+            }
+
+            return listMotorista;
+        }
+
+        public List<MODEL.Motorista> SelectByNome(string nome)
+        {
+            List<MODEL.Motorista> listMotorista = new List<MODEL.Motorista>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT *FROM Motorista WHERE (nome LIKE @nome);";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Motorista motorista = new MODEL.Motorista();
+                    motorista.id = Convert.ToInt32(dados["id"].ToString());
+                    motorista.nome = dados["nome"].ToString();
+                    motorista.telefone = dados["telefone"].ToString();
+                    motorista.validadeCnh = Convert.ToDateTime(dados["validadeCnh"].ToString());
+                    motorista.salario = Convert.ToSingle(dados["salario"].ToString());
+                    //motorista.comissao = Convert.ToSingle(dados["comissao"].ToString());
+
+                    listMotorista.Add(motorista);
+                }
+            }
+
+            catch
+            {
+                Console.WriteLine("ERRO AO CONSULTAR O BANCO DE DADOS!");
+            }
+            finally
+            {
+
+            }
+
+            return listMotorista;
+        }
+
         //METODO INSERIR
         public void Inserir(MODEL.Motorista motorista)
         {            
