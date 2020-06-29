@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NOVO_TRANSPORTADORADataSet13" targetNamespace="http://tempuri.org/NOVO_TRANSPORTADORADataSet13.xsd" xmlns:mstns="http://tempuri.org/NOVO_TRANSPORTADORADataSet13.xsd" xmlns="http://tempuri.org/NOVO_TRANSPORTADORADataSet13.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NOVO_TRANSPORTADORAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NOVO_TRANSPORTADORAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TRANSPORTADORA.Properties.Settings.GlobalReference.Default.NOVO_TRANSPORTADORAConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CombustivelTableAdapter" GeneratorDataComponentClassName="CombustivelTableAdapter" Name="Combustivel" UserDataComponentName="CombustivelTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NOVO_TRANSPORTADORAConnectionString (Settings)" DbObjectName="NOVO_TRANSPORTADORA.dbo.Combustivel" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT estoque FROM dbo.Combustivel</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="estoque" DataSetColumn="estoque" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NOVO_TRANSPORTADORADataSet13" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NOVO_TRANSPORTADORADataSet13" msprop:Generator_UserDSName="NOVO_TRANSPORTADORADataSet13">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Combustivel" msprop:Generator_TableClassName="CombustivelDataTable" msprop:Generator_TableVarName="tableCombustivel" msprop:Generator_TablePropName="Combustivel" msprop:Generator_RowDeletingName="CombustivelRowDeleting" msprop:Generator_RowChangingName="CombustivelRowChanging" msprop:Generator_RowEvHandlerName="CombustivelRowChangeEventHandler" msprop:Generator_RowDeletedName="CombustivelRowDeleted" msprop:Generator_UserTableName="Combustivel" msprop:Generator_RowChangedName="CombustivelRowChanged" msprop:Generator_RowEvArgName="CombustivelRowChangeEvent" msprop:Generator_RowClassName="CombustivelRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="estoque" msprop:Generator_ColumnVarNameInTable="columnestoque" msprop:Generator_ColumnPropNameInRow="estoque" msprop:Generator_ColumnPropNameInTable="estoqueColumn" msprop:Generator_UserColumnName="estoque" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

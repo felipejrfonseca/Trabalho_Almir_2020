@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using TRANSPORTADORA.CAMADAS;
+using TRANSPORTADORA.CAMADAS.RELATORIOS;
 
 namespace TRANSPORTADORA
 {
@@ -199,7 +200,12 @@ namespace TRANSPORTADORA
         private void BtnRelatorio_Click(object sender, EventArgs e)
         {
             AtivarBtn(sender, RGBCores.cor6);
-            OpenChildForm(new FormRelatorio());
+            OpenChildForm(new FormCombustivel());
+        }
+
+        private void BtnRelatorio_Click_1(object sender, EventArgs e)
+        {
+            Relatorios.relCombustivel();
         }
     }
 }

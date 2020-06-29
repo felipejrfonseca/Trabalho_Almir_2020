@@ -50,10 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAMADAS\BLL\Caminhoes.cs" />
+    <Compile Include="CAMADAS\BLL\Combustivel.cs" />
     <Compile Include="CAMADAS\BLL\Frete.cs" />
     <Compile Include="CAMADAS\BLL\Motorista.cs" />
     <Compile Include="CAMADAS\BLL\Transportadora.cs" />
     <Compile Include="CAMADAS\DAL\Caminhoes.cs" />
+    <Compile Include="CAMADAS\DAL\Combustivel.cs" />
     <Compile Include="CAMADAS\DAL\Cor.cs" />
     <Compile Include="CAMADAS\DAL\Frete.cs" />
     <Compile Include="CAMADAS\DAL\Motorista.cs" />
@@ -63,6 +65,12 @@
     </Compile>
     <Compile Include="CAMADAS\FormCaminhoes.Designer.cs">
       <DependentUpon>FormCaminhoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAMADAS\FormCombustivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAMADAS\FormCombustivel.Designer.cs">
+      <DependentUpon>FormCombustivel.cs</DependentUpon>
     </Compile>
     <Compile Include="CAMADAS\FormRelatorio.cs">
       <SubType>Form</SubType>
@@ -89,6 +97,8 @@
     <Compile Include="CAMADAS\MODEL\Frete.cs" />
     <Compile Include="CAMADAS\MODEL\Motorista.cs" />
     <Compile Include="CAMADAS\MODEL\Transportadora.cs" />
+    <Compile Include="CAMADAS\RELATORIOS\Funcoes.cs" />
+    <Compile Include="CAMADAS\RELATORIOS\Relatorios.cs" />
     <Compile Include="FormMotoristas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +141,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NOVO_TRANSPORTADORADataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NOVO_TRANSPORTADORADataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NOVO_TRANSPORTADORADataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NOVO_TRANSPORTADORADataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NOVO_TRANSPORTADORADataSet14.xsd</DependentUpon>
     </Compile>
     <Compile Include="NOVO_TRANSPORTADORADataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -191,6 +211,9 @@
     </Compile>
     <EmbeddedResource Include="CAMADAS\FormCaminhoes.resx">
       <DependentUpon>FormCaminhoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAMADAS\FormCombustivel.resx">
+      <DependentUpon>FormCombustivel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CAMADAS\FormRelatorio.resx">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
@@ -273,6 +296,28 @@
     </None>
     <None Include="NOVO_TRANSPORTADORADataSet12.xss">
       <DependentUpon>NOVO_TRANSPORTADORADataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet13.xsc">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NOVO_TRANSPORTADORADataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet13.xss">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet14.xsc">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NOVO_TRANSPORTADORADataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet14.xss">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet14.xsd</DependentUpon>
     </None>
     <None Include="NOVO_TRANSPORTADORADataSet2.xsc">
       <DependentUpon>NOVO_TRANSPORTADORADataSet2.xsd</DependentUpon>
@@ -363,6 +408,13 @@
       <DependentUpon>NOVO_TRANSPORTADORADataSet9.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TRANSPORTADORA.CAMADAS.MODEL.Caminhao.datasource" />
+    <None Include="Properties\DataSources\TRANSPORTADORA.CAMADAS.MODEL.Combustivel.datasource" />
+    <None Include="Properties\DataSources\TRANSPORTADORA.CAMADAS.MODEL.Conexao.datasource" />
+    <None Include="Properties\DataSources\TRANSPORTADORA.CAMADAS.MODEL.Cor.datasource" />
+    <None Include="Properties\DataSources\TRANSPORTADORA.CAMADAS.MODEL.Frete.datasource" />
+    <None Include="Properties\DataSources\TRANSPORTADORA.CAMADAS.MODEL.Motorista.datasource" />
+    <None Include="Properties\DataSources\TRANSPORTADORA.CAMADAS.MODEL.Transportadora.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

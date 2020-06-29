@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.BtnCombustivel = new FontAwesome.Sharp.IconButton();
             this.BtnFrete = new FontAwesome.Sharp.IconButton();
             this.BtnCaminhoes = new FontAwesome.Sharp.IconButton();
             this.BtnTransportadora = new FontAwesome.Sharp.IconButton();
@@ -59,6 +60,7 @@
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.PanelMenu.Controls.Add(this.BtnRelatorio);
+            this.PanelMenu.Controls.Add(this.BtnCombustivel);
             this.PanelMenu.Controls.Add(this.BtnFrete);
             this.PanelMenu.Controls.Add(this.BtnCaminhoes);
             this.PanelMenu.Controls.Add(this.BtnTransportadora);
@@ -69,6 +71,30 @@
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(220, 647);
             this.PanelMenu.TabIndex = 0;
+            // 
+            // BtnCombustivel
+            // 
+            this.BtnCombustivel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCombustivel.FlatAppearance.BorderSize = 0;
+            this.BtnCombustivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCombustivel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnCombustivel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCombustivel.ForeColor = System.Drawing.Color.White;
+            this.BtnCombustivel.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.BtnCombustivel.IconColor = System.Drawing.Color.White;
+            this.BtnCombustivel.IconSize = 35;
+            this.BtnCombustivel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCombustivel.Location = new System.Drawing.Point(0, 328);
+            this.BtnCombustivel.Name = "BtnCombustivel";
+            this.BtnCombustivel.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.BtnCombustivel.Rotation = 0D;
+            this.BtnCombustivel.Size = new System.Drawing.Size(220, 45);
+            this.BtnCombustivel.TabIndex = 12;
+            this.BtnCombustivel.Text = "Combustível";
+            this.BtnCombustivel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCombustivel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCombustivel.UseVisualStyleBackColor = true;
+            this.BtnCombustivel.Click += new System.EventHandler(this.BtnRelatorio_Click);
             // 
             // BtnFrete
             // 
@@ -306,17 +332,17 @@
             this.BtnRelatorio.IconColor = System.Drawing.Color.White;
             this.BtnRelatorio.IconSize = 35;
             this.BtnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRelatorio.Location = new System.Drawing.Point(0, 328);
+            this.BtnRelatorio.Location = new System.Drawing.Point(0, 373);
             this.BtnRelatorio.Name = "BtnRelatorio";
             this.BtnRelatorio.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.BtnRelatorio.Rotation = 0D;
             this.BtnRelatorio.Size = new System.Drawing.Size(220, 45);
-            this.BtnRelatorio.TabIndex = 12;
+            this.BtnRelatorio.TabIndex = 13;
             this.BtnRelatorio.Text = "Relatórios";
             this.BtnRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnRelatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnRelatorio.UseVisualStyleBackColor = true;
-            this.BtnRelatorio.Click += new System.EventHandler(this.BtnRelatorio_Click);
+            this.BtnRelatorio.Click += new System.EventHandler(this.BtnRelatorio_Click_1);
             // 
             // FormHome
             // 
@@ -360,6 +386,7 @@
         private FontAwesome.Sharp.IconPictureBox BtnMaximinizar;
         private FontAwesome.Sharp.IconPictureBox BtnMinimizar;
         private FontAwesome.Sharp.IconButton BtnFrete;
+        private FontAwesome.Sharp.IconButton BtnCombustivel;
         private FontAwesome.Sharp.IconButton BtnRelatorio;
     }
 }

@@ -58,7 +58,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(236, 24);
+            this.label1.Location = new System.Drawing.Point(236, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 18);
             this.label1.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(205, 58);
+            this.label2.Location = new System.Drawing.Point(205, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 18);
             this.label2.TabIndex = 2;
@@ -80,7 +80,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(170, 92);
+            this.label3.Location = new System.Drawing.Point(170, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 18);
             this.label3.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(120, 126);
+            this.label4.Location = new System.Drawing.Point(120, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 18);
             this.label4.TabIndex = 4;
@@ -102,7 +102,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(187, 160);
+            this.label5.Location = new System.Drawing.Point(187, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 18);
             this.label5.TabIndex = 5;
@@ -111,28 +111,28 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(269, 22);
+            this.txtID.Location = new System.Drawing.Point(269, 33);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(71, 20);
             this.txtID.TabIndex = 1;
             // 
             // txtValidadeCnh
             // 
-            this.txtValidadeCnh.Location = new System.Drawing.Point(269, 124);
+            this.txtValidadeCnh.Location = new System.Drawing.Point(269, 135);
             this.txtValidadeCnh.Name = "txtValidadeCnh";
             this.txtValidadeCnh.Size = new System.Drawing.Size(100, 20);
             this.txtValidadeCnh.TabIndex = 4;
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(269, 158);
+            this.txtSalario.Location = new System.Drawing.Point(269, 169);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(100, 20);
             this.txtSalario.TabIndex = 5;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(269, 90);
+            this.txtTelefone.Location = new System.Drawing.Point(269, 101);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(127, 20);
             this.txtTelefone.TabIndex = 3;
@@ -140,7 +140,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(269, 56);
+            this.txtNome.Location = new System.Drawing.Point(269, 67);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(354, 20);
             this.txtNome.TabIndex = 2;
@@ -181,7 +181,7 @@
             // DGMotorista
             // 
             this.DGMotorista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGMotorista.Location = new System.Drawing.Point(12, 257);
+            this.DGMotorista.Location = new System.Drawing.Point(19, 296);
             this.DGMotorista.Name = "DGMotorista";
             this.DGMotorista.Size = new System.Drawing.Size(868, 255);
             this.DGMotorista.TabIndex = 9;
@@ -197,7 +197,7 @@
             this.GbBuscar.Controls.Add(this.TxtFiltro);
             this.GbBuscar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbBuscar.ForeColor = System.Drawing.Color.White;
-            this.GbBuscar.Location = new System.Drawing.Point(381, 126);
+            this.GbBuscar.Location = new System.Drawing.Point(388, 158);
             this.GbBuscar.Name = "GbBuscar";
             this.GbBuscar.Size = new System.Drawing.Size(499, 125);
             this.GbBuscar.TabIndex = 27;
@@ -270,7 +270,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(892, 524);
+            this.ClientSize = new System.Drawing.Size(908, 563);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.GbBuscar);
             this.Controls.Add(this.DGMotorista);

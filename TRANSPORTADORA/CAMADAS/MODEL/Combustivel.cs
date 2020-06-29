@@ -10,9 +10,8 @@ namespace TRANSPORTADORA.CAMADAS.MODEL
     {
         public int id { get; set; }
         public int estoque { get; set; }
-        public string modeloCaminhao { get; set; }
         public int caminhaoID { get; set; }
         public int motoristaID { get; set; }
-        public string nomeMotorista { get; set; }
+        public int atualEstoque { get; set; }
     }
 }
