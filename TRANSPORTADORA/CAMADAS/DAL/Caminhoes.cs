@@ -35,6 +35,14 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                     caminhao.cor = Convert.ToInt32(dados["corFK"].ToString());
                     caminhao.motorista = Convert.ToInt32(dados["motoristaFK"].ToString());
 
+                    CAMADAS.DAL.Cor dalcor = new CAMADAS.DAL.Cor();
+                    CAMADAS.MODEL.Cor cor = dalcor.SelectIDNome(caminhao.cor);
+                    caminhao.nomeCor = cor.cor;
+
+                    CAMADAS.DAL.Motorista dalMoto = new CAMADAS.DAL.Motorista();
+                    CAMADAS.MODEL.Motorista motorista = dalMoto.SelectIDNome(caminhao.motorista);
+                    caminhao.nomeMotorista = motorista.nome;
+
                     listCaminhao.Add(caminhao);
                 }
             }
@@ -50,6 +58,43 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             }
 
             return listCaminhao;
+        }
+
+        //Metodo select
+        public MODEL.Caminhao SelectIDnome(int id)
+        {
+            MODEL.Caminhao caminhao = new MODEL.Caminhao();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT *FROM Caminhoes WHERE id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                if (dados.Read())
+                {
+                    
+                    caminhao.id = Convert.ToInt32(dados["id"].ToString());
+                    caminhao.placa = dados["placa"].ToString();
+                    caminhao.modelo = dados["modelo"].ToString();
+                    caminhao.cor = Convert.ToInt32(dados["corFK"].ToString());
+                    caminhao.motorista = Convert.ToInt32(dados["motoristaFK"].ToString());
+                }
+            }
+
+            catch
+            {
+                Console.WriteLine("ERRO AO CONSULTAR O BANCO DE DADOS!");
+            }
+
+            finally
+            {
+
+            }
+
+            return caminhao;
         }
 
         //INSERT

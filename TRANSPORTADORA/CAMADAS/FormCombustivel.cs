@@ -16,6 +16,7 @@ namespace TRANSPORTADORA.CAMADAS
         {
             InitializeComponent();
             limparControles();
+            calcularEstoque();
         }
 
         public void limparControles()
@@ -27,6 +28,7 @@ namespace TRANSPORTADORA.CAMADAS
             cmbMotorista.Text = "";
             txtQuantidade.Text = "";
         }
+
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -85,59 +87,70 @@ namespace TRANSPORTADORA.CAMADAS
             
             if(txtIdCaminhao.Text != "" && txtIdMotorista.Text != "" && txtQuantidade.Text != "")
             {
-                int estoque = Int32.Parse(txtQuantidade.Text);
+                int quantidade = Int32.Parse(txtQuantidade.Text);
                 Convert.ToInt32(txtQuantidade.Text).ToString();
+                int estoque = Int32.Parse(txtEstoque.Text);
+                Convert.ToInt32(txtEstoque.Text).ToString();
 
-                if (RBEntrada.Checked)
-                {                   
-                    
-                    if(estoque > 0)
-                    {
-                        combustivel.caminhaoID = Convert.ToInt32(txtIdCaminhao.Text);
-                        combustivel.motoristaID = Convert.ToInt32(txtIdMotorista.Text);
-                        combustivel.estoque = Convert.ToInt32(txtQuantidade.Text);
-                        bllCombustivel.Insert(combustivel);
-
-                        limparControles();
-
-                        DGCombustivel.DataSource = "";
-                        DGCombustivel.DataSource = bllCombustivel.Select();
-
-                       
-                    }
-                    else 
-                    {
-                        MessageBox.Show("ENTRADAS NO ESTOQUE DEVEM SER POSITIVAS!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                }
-
-                else if(RBSaida.Checked)
+                if (quantidade < estoque)
                 {
-                    if(estoque > 0)
+                    if (RBEntrada.Checked)
                     {
-                        combustivel.caminhaoID = Convert.ToInt32(txtIdCaminhao.Text);
-                        combustivel.motoristaID = Convert.ToInt32(txtIdMotorista.Text);
-                        estoque = estoque * -1;                        
-                        combustivel.estoque = Convert.ToInt32(estoque);
-                        bllCombustivel.Insert(combustivel);
 
-                        limparControles();
+                        if(quantidade > 0)
+                        {
+                            combustivel.caminhaoID = Convert.ToInt32(txtIdCaminhao.Text);
+                            combustivel.motoristaID = Convert.ToInt32(txtIdMotorista.Text);
+                            combustivel.estoque = Convert.ToInt32(txtQuantidade.Text);
+                            bllCombustivel.Insert(combustivel);
 
-                        DGCombustivel.DataSource = "";
-                        DGCombustivel.DataSource = bllCombustivel.Select();
+                            limparControles();
+
+                            DGCombustivel.DataSource = "";
+                            DGCombustivel.DataSource = bllCombustivel.Select();                                                  
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("ENTRADAS NO ESTOQUE DEVEM SER POSITIVAS!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+
+                    else if (RBSaida.Checked)
+                    {
+                        if (quantidade > 0)
+                        {
+                            combustivel.caminhaoID = Convert.ToInt32(txtIdCaminhao.Text);
+                            combustivel.motoristaID = Convert.ToInt32(txtIdMotorista.Text);
+                            quantidade = quantidade * -1;
+                            combustivel.estoque = Convert.ToInt32(quantidade);
+                            bllCombustivel.Insert(combustivel);
+
+                            limparControles();
+
+                            DGCombustivel.DataSource = "";
+                            DGCombustivel.DataSource = bllCombustivel.Select();
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("ENTRADAS NO ESTOQUE DEVEM SER POSITIVAS!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
 
                     else
                     {
-                        MessageBox.Show("ENTRADAS NO ESTOQUE DEVEM SER POSITIVAS!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("NÃO FOI SELECIONADO A OPERAÇÃO!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
                 else
                 {
-                    MessageBox.Show("NÃO FOI SELECIONADO A OPERAÇÃO!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ESTOQUE INSUFICIENTE!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
             }
 
             else
@@ -178,10 +191,11 @@ namespace TRANSPORTADORA.CAMADAS
                 MessageBox.Show("Nenhum Frete Selecionado Para Exclusão!", "Excluir Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            limparControles();
+            limparControles();                       
 
             DGCombustivel.DataSource = "";
             DGCombustivel.DataSource = bllCombustivel.Select();
+            txtEstoque.Text = calcularEstoque().ToString();
         }
 
         private void DGCombustivel_DoubleClick(object sender, EventArgs e)
@@ -196,6 +210,6 @@ namespace TRANSPORTADORA.CAMADAS
         private void txtEstoque_TextChanged(object sender, EventArgs e)
         {
 
-        }
+        }        
     }
 }

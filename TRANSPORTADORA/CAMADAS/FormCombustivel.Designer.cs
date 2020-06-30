@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtIdCaminhao = new System.Windows.Forms.TextBox();
             this.txtIdMotorista = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,13 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.DGCombustivel = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estoqueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caminhaoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motoristaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atualEstoqueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.combustivelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.BtnInserir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,12 +45,13 @@
             this.RBSaida = new System.Windows.Forms.RadioButton();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.DGCombustivel = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DGCombustivel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combustivelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdCaminhao
             // 
+            this.txtIdCaminhao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIdCaminhao.Location = new System.Drawing.Point(840, 46);
             this.txtIdCaminhao.Name = "txtIdCaminhao";
             this.txtIdCaminhao.Size = new System.Drawing.Size(40, 20);
@@ -67,6 +60,7 @@
             // 
             // txtIdMotorista
             // 
+            this.txtIdMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIdMotorista.Location = new System.Drawing.Point(840, 72);
             this.txtIdMotorista.Name = "txtIdMotorista";
             this.txtIdMotorista.Size = new System.Drawing.Size(40, 20);
@@ -75,6 +69,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
@@ -87,6 +82,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -99,6 +95,7 @@
             // 
             // cmbMotorista
             // 
+            this.cmbMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMotorista.DisplayMember = "id";
             this.cmbMotorista.FormattingEnabled = true;
             this.cmbMotorista.Location = new System.Drawing.Point(307, 115);
@@ -110,6 +107,7 @@
             // 
             // cmbCaminhao
             // 
+            this.cmbCaminhao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbCaminhao.DisplayMember = "id";
             this.cmbCaminhao.FormattingEnabled = true;
             this.cmbCaminhao.Location = new System.Drawing.Point(307, 73);
@@ -121,6 +119,7 @@
             // 
             // txtQuantidade
             // 
+            this.txtQuantidade.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtQuantidade.Location = new System.Drawing.Point(307, 158);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(106, 20);
@@ -128,6 +127,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -140,6 +140,7 @@
             // 
             // txtID
             // 
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(307, 32);
             this.txtID.Name = "txtID";
@@ -148,6 +149,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -157,65 +159,6 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "ID:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // DGCombustivel
-            // 
-            this.DGCombustivel.AllowUserToAddRows = false;
-            this.DGCombustivel.AllowUserToDeleteRows = false;
-            this.DGCombustivel.AutoGenerateColumns = false;
-            this.DGCombustivel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGCombustivel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.estoqueDataGridViewTextBoxColumn,
-            this.caminhaoIDDataGridViewTextBoxColumn,
-            this.motoristaIDDataGridViewTextBoxColumn,
-            this.atualEstoqueDataGridViewTextBoxColumn});
-            this.DGCombustivel.DataSource = this.combustivelBindingSource;
-            this.DGCombustivel.Location = new System.Drawing.Point(12, 268);
-            this.DGCombustivel.Name = "DGCombustivel";
-            this.DGCombustivel.ReadOnly = true;
-            this.DGCombustivel.Size = new System.Drawing.Size(884, 262);
-            this.DGCombustivel.TabIndex = 51;
-            this.DGCombustivel.DoubleClick += new System.EventHandler(this.DGCombustivel_DoubleClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estoqueDataGridViewTextBoxColumn
-            // 
-            this.estoqueDataGridViewTextBoxColumn.DataPropertyName = "estoque";
-            this.estoqueDataGridViewTextBoxColumn.HeaderText = "estoque";
-            this.estoqueDataGridViewTextBoxColumn.Name = "estoqueDataGridViewTextBoxColumn";
-            this.estoqueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // caminhaoIDDataGridViewTextBoxColumn
-            // 
-            this.caminhaoIDDataGridViewTextBoxColumn.DataPropertyName = "caminhaoID";
-            this.caminhaoIDDataGridViewTextBoxColumn.HeaderText = "caminhaoID";
-            this.caminhaoIDDataGridViewTextBoxColumn.Name = "caminhaoIDDataGridViewTextBoxColumn";
-            this.caminhaoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // motoristaIDDataGridViewTextBoxColumn
-            // 
-            this.motoristaIDDataGridViewTextBoxColumn.DataPropertyName = "motoristaID";
-            this.motoristaIDDataGridViewTextBoxColumn.HeaderText = "motoristaID";
-            this.motoristaIDDataGridViewTextBoxColumn.Name = "motoristaIDDataGridViewTextBoxColumn";
-            this.motoristaIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // atualEstoqueDataGridViewTextBoxColumn
-            // 
-            this.atualEstoqueDataGridViewTextBoxColumn.DataPropertyName = "atualEstoque";
-            this.atualEstoqueDataGridViewTextBoxColumn.HeaderText = "atualEstoque";
-            this.atualEstoqueDataGridViewTextBoxColumn.Name = "atualEstoqueDataGridViewTextBoxColumn";
-            this.atualEstoqueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // combustivelBindingSource
-            // 
-            this.combustivelBindingSource.DataSource = typeof(TRANSPORTADORA.CAMADAS.MODEL.Combustivel);
             // 
             // BtnExcluir
             // 
@@ -241,6 +184,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -252,6 +196,7 @@
             // 
             // RBEntrada
             // 
+            this.RBEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBEntrada.AutoSize = true;
             this.RBEntrada.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBEntrada.ForeColor = System.Drawing.Color.White;
@@ -265,6 +210,7 @@
             // 
             // RBSaida
             // 
+            this.RBSaida.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBSaida.AutoSize = true;
             this.RBSaida.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBSaida.ForeColor = System.Drawing.Color.White;
@@ -278,6 +224,7 @@
             // 
             // txtEstoque
             // 
+            this.txtEstoque.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEstoque.Enabled = false;
             this.txtEstoque.Location = new System.Drawing.Point(790, 242);
             this.txtEstoque.Name = "txtEstoque";
@@ -287,6 +234,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -295,6 +243,19 @@
             this.label4.Size = new System.Drawing.Size(87, 18);
             this.label4.TabIndex = 63;
             this.label4.Text = "ESTOQUE:";
+            // 
+            // DGCombustivel
+            // 
+            this.DGCombustivel.AllowUserToAddRows = false;
+            this.DGCombustivel.AllowUserToDeleteRows = false;
+            this.DGCombustivel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.DGCombustivel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGCombustivel.Location = new System.Drawing.Point(12, 268);
+            this.DGCombustivel.Name = "DGCombustivel";
+            this.DGCombustivel.ReadOnly = true;
+            this.DGCombustivel.Size = new System.Drawing.Size(884, 262);
+            this.DGCombustivel.TabIndex = 51;
+            this.DGCombustivel.DoubleClick += new System.EventHandler(this.DGCombustivel_DoubleClick);
             // 
             // FormCombustivel
             // 
@@ -324,7 +285,6 @@
             this.Text = "Combustível";
             this.Load += new System.EventHandler(this.FormCombustivel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGCombustivel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combustivelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,7 +302,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView DGCombustivel;
         private System.Windows.Forms.Button BtnExcluir;
         private System.Windows.Forms.Button BtnInserir;
         private System.Windows.Forms.Label label3;
@@ -350,11 +309,7 @@
         private System.Windows.Forms.RadioButton RBSaida;
         private System.Windows.Forms.TextBox txtEstoque;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estoqueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn caminhaoIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motoristaIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn atualEstoqueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource combustivelBindingSource;
+        private System.Windows.Forms.DataGridView DGCombustivel;
     }
 }

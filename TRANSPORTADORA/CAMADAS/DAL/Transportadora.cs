@@ -32,7 +32,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                 {
                     MODEL.Transportadora transportadora = new MODEL.Transportadora();
                     transportadora.id = Convert.ToInt32(dados["id"].ToString());
-                    transportadora.nomeTransportadora = dados["nomeTransportadora"].ToString();
+                    transportadora.transportadoraNome = dados["nomeTransportadora"].ToString();
 
                     listTransportadora.Add(transportadora);
                 }
@@ -67,7 +67,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                 {
                     MODEL.Transportadora transportadora = new MODEL.Transportadora();
                     transportadora.id = Convert.ToInt32(dados["id"].ToString());
-                    transportadora.nomeTransportadora = dados["nomeTransportadora"].ToString();
+                    transportadora.transportadoraNome = dados["nomeTransportadora"].ToString();
 
                     listTransportadora.Add(transportadora);
                 }
@@ -82,6 +82,37 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             }
 
             return listTransportadora;
+        }
+
+        public MODEL.Transportadora SelectIDNome(int id)
+        {
+            MODEL.Transportadora transportadora = new MODEL.Transportadora();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT *FROM Transportadora WHERE id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (dados.Read())
+                {                    
+                    transportadora.id = Convert.ToInt32(dados["id"].ToString());
+                    transportadora.transportadoraNome = dados["nomeTransportadora"].ToString();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("ERRO AO CONSULTAR BANCO");
+            }
+            finally
+            {
+
+            }
+
+            return transportadora;
         }
 
         public List<MODEL.Transportadora> SelectByNome(string nome)
@@ -101,7 +132,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                 {
                     MODEL.Transportadora transportadora = new MODEL.Transportadora();
                     transportadora.id = Convert.ToInt32(dados["id"].ToString());
-                    transportadora.nomeTransportadora = dados["nomeTransportadora"].ToString();
+                    transportadora.transportadoraNome = dados["nomeTransportadora"].ToString();
 
                     listTransportadora.Add(transportadora);
                 }
@@ -124,7 +155,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "INSERT INTO Transportadora (nomeTransportadora) VALUES (@nomeTransportadora);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@nomeTransportadora", transportadora.nomeTransportadora);
+            cmd.Parameters.AddWithValue("@nomeTransportadora", transportadora.transportadoraNome);
 
             try
             {
@@ -149,7 +180,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             SqlCommand cmd = new SqlCommand(sql, conexao);
 
             cmd.Parameters.AddWithValue("id", transportadora.id);
-            cmd.Parameters.AddWithValue("@nomeTransportadora", transportadora.nomeTransportadora);
+            cmd.Parameters.AddWithValue("@nomeTransportadora", transportadora.transportadoraNome);
 
             try
             {

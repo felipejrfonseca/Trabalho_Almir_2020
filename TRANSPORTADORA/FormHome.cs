@@ -205,7 +205,8 @@ namespace TRANSPORTADORA
 
         private void BtnRelatorio_Click_1(object sender, EventArgs e)
         {
-            Relatorios.relCombustivel();
+            AtivarBtn(sender, RGBCores.cor1);
+            OpenChildForm(new FormRelatorios());
         }
     }
 }

@@ -16,7 +16,8 @@ namespace TRANSPORTADORA.CAMADAS.MODEL
         public DateTime data { get; set; }
         public float valor { get; set; }
         public int transportadora { get; set; }
-        public int caminhao { get; set; }
+        public string nomeTransportadora { get; set; }
         public int motorista { get; set; }
+        public string nomeMotorista { get; set; }
     }
 }

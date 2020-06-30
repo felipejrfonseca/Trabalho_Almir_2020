@@ -39,6 +39,14 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                     frete.transportadora = Convert.ToInt32(dados["transportadoraFK"].ToString());
                     frete.motorista = Convert.ToInt32(dados["motoristaFK"].ToString());
 
+                    CAMADAS.DAL.Motorista dalMoto = new CAMADAS.DAL.Motorista();
+                    CAMADAS.MODEL.Motorista motorista = dalMoto.SelectIDNome(frete.motorista);
+                    frete.nomeMotorista = motorista.nome;
+
+                    CAMADAS.DAL.Transportadora dalTransportadora = new CAMADAS.DAL.Transportadora();
+                    CAMADAS.MODEL.Transportadora transportadora = dalTransportadora.SelectIDNome(frete.transportadora);
+                    frete.nomeTransportadora = transportadora.transportadoraNome;
+
                     listFrete.Add(frete);
                 }
             }

@@ -11,7 +11,8 @@ namespace TRANSPORTADORA.CAMADAS.MODEL
         public int id { get; set; }
         public int estoque { get; set; }
         public int caminhaoID { get; set; }
+        public string placaCaminhao { get; set; }
         public int motoristaID { get; set; }
-        public int atualEstoque { get; set; }
+        public string nomeMotorista { get; set; }        
     }
 }

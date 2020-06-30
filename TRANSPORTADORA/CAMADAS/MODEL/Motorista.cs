@@ -12,7 +12,6 @@ namespace TRANSPORTADORA.CAMADAS.MODEL
         public string nome { get; set; }
         public string telefone { get; set; }
         public DateTime validadeCnh { get; set; }
-        public float salario { get; set; }
-        public float comissao { get; set; }
+        public float salario { get; set; }        
     }
 }

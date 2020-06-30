@@ -48,6 +48,38 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             return listCor;
         }
 
+        public MODEL.Cor SelectIDNome(int id)
+        {
+            MODEL.Cor cor = new MODEL.Cor();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT *FROM Cor WHERE id=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (dados.Read())
+                {
+                    cor.id = Convert.ToInt32(dados["id"].ToString());
+                    cor.cor = dados["cor"].ToString();
+                }
+            }
+
+            catch
+            {
+                Console.WriteLine("ERRO AO CONSULTAR O BANCO DE DADOS!");
+            }
+            finally
+            {
+
+            }
+
+            return cor;
+        }
+
         public void Inserir(MODEL.Cor cor)
         {
             SqlConnection conexao = new SqlConnection(strCon);

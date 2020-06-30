@@ -35,7 +35,15 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                     combustivel.id = Convert.ToInt32(dados["id"].ToString());
                     combustivel.estoque = Convert.ToInt32(dados["estoque"].ToString());
                     combustivel.caminhaoID = Convert.ToInt32(dados["caminhaoFK"].ToString());                
-                    combustivel.motoristaID = Convert.ToInt32(dados["motoristaFK"].ToString());                    
+                    combustivel.motoristaID = Convert.ToInt32(dados["motoristaFK"].ToString());
+
+                    CAMADAS.DAL.Motorista dalMoto = new CAMADAS.DAL.Motorista();
+                    CAMADAS.MODEL.Motorista motorista = dalMoto.SelectIDNome(combustivel.motoristaID);
+                    combustivel.nomeMotorista = motorista.nome;
+
+                    CAMADAS.DAL.Caminhoes dalCam = new CAMADAS.DAL.Caminhoes();
+                    CAMADAS.MODEL.Caminhao caminhoes = dalCam.SelectIDnome(combustivel.caminhaoID);
+                    combustivel.placaCaminhao = caminhoes.placa;
                     
                     listCombustivel.Add(combustivel);
                 }
@@ -91,6 +99,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             return listCombustivel;
         }
 
+        /*
         public void BaixaEstoque(MODEL.Combustivel combustivel)
         {
             SqlConnection conexao = new SqlConnection(strCon);
@@ -135,8 +144,9 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             {
                 conexao.Close();
             }
-        }
+        }*/
 
+        /*
         public int SelectID()
         {
 
@@ -164,7 +174,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                 conexao.Close();
             }
             return estoque;
-        }
+        }*/
 
         /*
         public List<MODEL.Combustivel> SelectByNome(string nome)

@@ -38,7 +38,7 @@ namespace TRANSPORTADORA.CAMADAS
             {
                 CAMADAS.BLL.Transportadora bllTransportadora = new CAMADAS.BLL.Transportadora();
                 CAMADAS.MODEL.Transportadora transportadora = new CAMADAS.MODEL.Transportadora();
-                transportadora.nomeTransportadora = txtTransportadora.Text;
+                transportadora.transportadoraNome = txtTransportadora.Text;
 
                 bllTransportadora.Insert(transportadora);
 
@@ -62,7 +62,7 @@ namespace TRANSPORTADORA.CAMADAS
             {
                 CAMADAS.MODEL.Transportadora transportadora = new CAMADAS.MODEL.Transportadora();
                 transportadora.id = Convert.ToInt32(txtID.Text);
-                transportadora.nomeTransportadora = txtTransportadora.Text;
+                transportadora.transportadoraNome = txtTransportadora.Text;
 
                 CAMADAS.BLL.Transportadora bllTransportadora = new CAMADAS.BLL.Transportadora();
                 bllTransportadora.Update(transportadora);
@@ -115,7 +115,7 @@ namespace TRANSPORTADORA.CAMADAS
         private void DGTransportadora_DoubleClick(object sender, EventArgs e)
         {            
             txtID.Text = DGTransportadora.SelectedRows[0].Cells["id"].Value.ToString();
-            txtTransportadora.Text = DGTransportadora.SelectedRows[0].Cells["nomeTransportadora"].Value.ToString();
+            txtTransportadora.Text = DGTransportadora.SelectedRows[0].Cells["transportadoraNome"].Value.ToString();
             
         }
 

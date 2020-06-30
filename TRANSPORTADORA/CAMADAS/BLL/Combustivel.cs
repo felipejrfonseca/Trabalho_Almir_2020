@@ -21,11 +21,11 @@ namespace TRANSPORTADORA.CAMADAS.BLL
             return dalCombustivel.SelectByID(id);
         }
 
-        /*public List<MODEL.Transportadora> SelectByNome(string nome)
+        public List<MODEL.Transportadora> SelectByNome(string nome)
         {
             DAL.Transportadora daltransportadora = new DAL.Transportadora();
             return daltransportadora.SelectByNome(nome);
-        }*/
+        }
 
         public void Insert(MODEL.Combustivel combustivel)
         {
@@ -33,12 +33,12 @@ namespace TRANSPORTADORA.CAMADAS.BLL
             dalCombustivel.Inserir(combustivel);
         }
 
-        /*
+        
         public void Update(MODEL.Transportadora transportadora)
         {
             DAL.Transportadora dalTransportadora = new DAL.Transportadora();
             dalTransportadora.Update(transportadora);
-        }*/
+        }
 
         public void Delete(int idCombustivel)
         {

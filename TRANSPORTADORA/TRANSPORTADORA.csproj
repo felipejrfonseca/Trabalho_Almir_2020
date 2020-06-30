@@ -152,6 +152,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NOVO_TRANSPORTADORADataSet14.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NOVO_TRANSPORTADORADataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NOVO_TRANSPORTADORADataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NOVO_TRANSPORTADORADataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NOVO_TRANSPORTADORADataSet16.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NOVO_TRANSPORTADORADataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -318,6 +328,28 @@
     </None>
     <None Include="NOVO_TRANSPORTADORADataSet14.xss">
       <DependentUpon>NOVO_TRANSPORTADORADataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet15.xsc">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NOVO_TRANSPORTADORADataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet15.xss">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet16.xsc">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NOVO_TRANSPORTADORADataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NOVO_TRANSPORTADORADataSet16.xss">
+      <DependentUpon>NOVO_TRANSPORTADORADataSet16.xsd</DependentUpon>
     </None>
     <None Include="NOVO_TRANSPORTADORADataSet2.xsc">
       <DependentUpon>NOVO_TRANSPORTADORADataSet2.xsd</DependentUpon>

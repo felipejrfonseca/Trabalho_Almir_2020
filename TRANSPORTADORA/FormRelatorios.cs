@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRANSPORTADORA.CAMADAS.RELATORIOS;
 
 namespace TRANSPORTADORA
 {
@@ -19,9 +20,25 @@ namespace TRANSPORTADORA
 
         private void FormRelatorios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'nOVO_TRANSPORTADORADataSet1.Cor'. Você pode movê-la ou removê-la conforme necessário.
-            this.corTableAdapter.Fill(this.nOVO_TRANSPORTADORADataSet1.Cor);
+            
 
+        }
+
+        private void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+            if(RBCombustivel.Checked)
+            {
+                Relatorios.relCombustivel();
+            }
+
+            else if (RBFretes.Checked)
+            {
+                Relatorios.relFretes();
+            }
+            else
+            {
+                MessageBox.Show("SELECIONE O RELATÓRIO QUE DESEJA EMITIR", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

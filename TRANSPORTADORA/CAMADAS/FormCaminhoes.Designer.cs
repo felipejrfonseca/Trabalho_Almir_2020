@@ -49,6 +49,7 @@
             // 
             // txtPlaca
             // 
+            this.txtPlaca.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPlaca.Location = new System.Drawing.Point(279, 96);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(220, 20);
@@ -56,6 +57,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -68,6 +70,7 @@
             // 
             // txtID
             // 
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(279, 50);
             this.txtID.Name = "txtID";
@@ -77,6 +80,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -88,6 +92,7 @@
             // 
             // DGCaminhoes
             // 
+            this.DGCaminhoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DGCaminhoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGCaminhoes.Location = new System.Drawing.Point(12, 268);
             this.DGCaminhoes.Name = "DGCaminhoes";
@@ -131,6 +136,7 @@
             // 
             // txtModelo
             // 
+            this.txtModelo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtModelo.Location = new System.Drawing.Point(279, 138);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(220, 20);
@@ -138,6 +144,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -149,6 +156,7 @@
             // 
             // cmbCor
             // 
+            this.cmbCor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbCor.DisplayMember = "id";
             this.cmbCor.FormattingEnabled = true;
             this.cmbCor.Location = new System.Drawing.Point(633, 47);
@@ -160,6 +168,7 @@
             // 
             // cmbMotorista
             // 
+            this.cmbMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMotorista.DisplayMember = "id";
             this.cmbMotorista.FormattingEnabled = true;
             this.cmbMotorista.Location = new System.Drawing.Point(633, 144);
@@ -171,6 +180,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -182,6 +192,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
@@ -193,6 +204,7 @@
             // 
             // txtIdMotorista
             // 
+            this.txtIdMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIdMotorista.Location = new System.Drawing.Point(840, 144);
             this.txtIdMotorista.Name = "txtIdMotorista";
             this.txtIdMotorista.Size = new System.Drawing.Size(40, 20);
@@ -202,6 +214,7 @@
             // 
             // txtIdCor
             // 
+            this.txtIdCor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIdCor.Location = new System.Drawing.Point(840, 46);
             this.txtIdCor.Name = "txtIdCor";
             this.txtIdCor.Size = new System.Drawing.Size(40, 20);

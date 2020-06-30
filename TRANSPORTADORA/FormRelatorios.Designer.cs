@@ -28,82 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nOVO_TRANSPORTADORADataSet1 = new TRANSPORTADORA.NOVO_TRANSPORTADORADataSet1();
-            this.corBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.corTableAdapter = new TRANSPORTADORA.NOVO_TRANSPORTADORADataSet1TableAdapters.CorTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.corDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nOVO_TRANSPORTADORADataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corBindingSource)).BeginInit();
+            this.GBRelatorio = new System.Windows.Forms.GroupBox();
+            this.RBCombustivel = new System.Windows.Forms.RadioButton();
+            this.BtnFiltrar = new System.Windows.Forms.Button();
+            this.RBFretes = new System.Windows.Forms.RadioButton();
+            this.GBRelatorio.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // GBRelatorio
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.corDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.corBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(185, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.GBRelatorio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.GBRelatorio.Controls.Add(this.RBCombustivel);
+            this.GBRelatorio.Controls.Add(this.BtnFiltrar);
+            this.GBRelatorio.Controls.Add(this.RBFretes);
+            this.GBRelatorio.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GBRelatorio.ForeColor = System.Drawing.Color.White;
+            this.GBRelatorio.Location = new System.Drawing.Point(214, 168);
+            this.GBRelatorio.Name = "GBRelatorio";
+            this.GBRelatorio.Size = new System.Drawing.Size(499, 125);
+            this.GBRelatorio.TabIndex = 28;
+            this.GBRelatorio.TabStop = false;
+            this.GBRelatorio.Text = "RELATÓRIOS:";
             // 
-            // nOVO_TRANSPORTADORADataSet1
+            // RBCombustivel
             // 
-            this.nOVO_TRANSPORTADORADataSet1.DataSetName = "NOVO_TRANSPORTADORADataSet1";
-            this.nOVO_TRANSPORTADORADataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.RBCombustivel.AutoSize = true;
+            this.RBCombustivel.Location = new System.Drawing.Point(149, 31);
+            this.RBCombustivel.Name = "RBCombustivel";
+            this.RBCombustivel.Size = new System.Drawing.Size(103, 18);
+            this.RBCombustivel.TabIndex = 30;
+            this.RBCombustivel.Text = "COMBUSTÍVEL";
+            this.RBCombustivel.UseVisualStyleBackColor = true;
             // 
-            // corBindingSource
+            // BtnFiltrar
             // 
-            this.corBindingSource.DataMember = "Cor";
-            this.corBindingSource.DataSource = this.nOVO_TRANSPORTADORADataSet1;
+            this.BtnFiltrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFiltrar.ForeColor = System.Drawing.Color.Black;
+            this.BtnFiltrar.Location = new System.Drawing.Point(205, 75);
+            this.BtnFiltrar.Name = "BtnFiltrar";
+            this.BtnFiltrar.Size = new System.Drawing.Size(88, 38);
+            this.BtnFiltrar.TabIndex = 27;
+            this.BtnFiltrar.Text = "GERAR";
+            this.BtnFiltrar.UseVisualStyleBackColor = true;
+            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
-            // corTableAdapter
+            // RBFretes
             // 
-            this.corTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // corDataGridViewTextBoxColumn
-            // 
-            this.corDataGridViewTextBoxColumn.DataPropertyName = "cor";
-            this.corDataGridViewTextBoxColumn.HeaderText = "cor";
-            this.corDataGridViewTextBoxColumn.Name = "corDataGridViewTextBoxColumn";
+            this.RBFretes.AutoSize = true;
+            this.RBFretes.Location = new System.Drawing.Point(275, 31);
+            this.RBFretes.Name = "RBFretes";
+            this.RBFretes.Size = new System.Drawing.Size(57, 18);
+            this.RBFretes.TabIndex = 29;
+            this.RBFretes.Text = "FRETE";
+            this.RBFretes.UseVisualStyleBackColor = true;
             // 
             // FormRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(908, 563);
+            this.Controls.Add(this.GBRelatorio);
             this.Name = "FormRelatorios";
             this.Text = "Relatorios";
             this.Load += new System.EventHandler(this.FormRelatorios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nOVO_TRANSPORTADORADataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corBindingSource)).EndInit();
+            this.GBRelatorio.ResumeLayout(false);
+            this.GBRelatorio.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private NOVO_TRANSPORTADORADataSet1 nOVO_TRANSPORTADORADataSet1;
-        private System.Windows.Forms.BindingSource corBindingSource;
-        private NOVO_TRANSPORTADORADataSet1TableAdapters.CorTableAdapter corTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn corDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox GBRelatorio;
+        private System.Windows.Forms.RadioButton RBCombustivel;
+        private System.Windows.Forms.Button BtnFiltrar;
+        private System.Windows.Forms.RadioButton RBFretes;
     }
 }

@@ -10,6 +10,6 @@ namespace TRANSPORTADORA.CAMADAS.MODEL
     public class Transportadora
     {
         public int id { get; set; }
-        public string nomeTransportadora { get; set; }
+        public string transportadoraNome { get; set; }
     }
 }

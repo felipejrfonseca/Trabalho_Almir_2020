@@ -38,17 +38,18 @@
             this.BtnInserir = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.GbBuscar = new System.Windows.Forms.GroupBox();
-            this.TxtFiltro = new System.Windows.Forms.TextBox();
+            this.LBFiltro = new System.Windows.Forms.Label();
+            this.RBId = new System.Windows.Forms.RadioButton();
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.RBNome = new System.Windows.Forms.RadioButton();
-            this.RBId = new System.Windows.Forms.RadioButton();
-            this.LBFiltro = new System.Windows.Forms.Label();
+            this.TxtFiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGTransportadora)).BeginInit();
             this.GbBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTransportadora
             // 
+            this.txtTransportadora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTransportadora.Location = new System.Drawing.Point(339, 94);
             this.txtTransportadora.Name = "txtTransportadora";
             this.txtTransportadora.Size = new System.Drawing.Size(335, 20);
@@ -56,6 +57,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -67,6 +69,7 @@
             // 
             // txtID
             // 
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(339, 50);
             this.txtID.Name = "txtID";
@@ -75,6 +78,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -86,6 +90,7 @@
             // 
             // DGTransportadora
             // 
+            this.DGTransportadora.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DGTransportadora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGTransportadora.Location = new System.Drawing.Point(12, 268);
             this.DGTransportadora.Name = "DGTransportadora";
@@ -140,6 +145,7 @@
             // 
             // GbBuscar
             // 
+            this.GbBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.GbBuscar.Controls.Add(this.LBFiltro);
             this.GbBuscar.Controls.Add(this.RBId);
             this.GbBuscar.Controls.Add(this.BtnFiltrar);
@@ -155,12 +161,24 @@
             this.GbBuscar.Text = "FILTRO:";
             this.GbBuscar.Visible = false;
             // 
-            // TxtFiltro
+            // LBFiltro
             // 
-            this.TxtFiltro.Location = new System.Drawing.Point(27, 68);
-            this.TxtFiltro.Name = "TxtFiltro";
-            this.TxtFiltro.Size = new System.Drawing.Size(394, 20);
-            this.TxtFiltro.TabIndex = 27;
+            this.LBFiltro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBFiltro.Location = new System.Drawing.Point(27, 49);
+            this.LBFiltro.Name = "LBFiltro";
+            this.LBFiltro.Size = new System.Drawing.Size(334, 16);
+            this.LBFiltro.TabIndex = 31;
+            // 
+            // RBId
+            // 
+            this.RBId.AutoSize = true;
+            this.RBId.Location = new System.Drawing.Point(30, 19);
+            this.RBId.Name = "RBId";
+            this.RBId.Size = new System.Drawing.Size(35, 18);
+            this.RBId.TabIndex = 30;
+            this.RBId.Text = "ID";
+            this.RBId.UseVisualStyleBackColor = true;
+            this.RBId.CheckedChanged += new System.EventHandler(this.RBId_CheckedChanged);
             // 
             // BtnFiltrar
             // 
@@ -185,24 +203,12 @@
             this.RBNome.UseVisualStyleBackColor = true;
             this.RBNome.CheckedChanged += new System.EventHandler(this.RBNome_CheckedChanged);
             // 
-            // RBId
+            // TxtFiltro
             // 
-            this.RBId.AutoSize = true;
-            this.RBId.Location = new System.Drawing.Point(30, 19);
-            this.RBId.Name = "RBId";
-            this.RBId.Size = new System.Drawing.Size(35, 18);
-            this.RBId.TabIndex = 30;
-            this.RBId.Text = "ID";
-            this.RBId.UseVisualStyleBackColor = true;
-            this.RBId.CheckedChanged += new System.EventHandler(this.RBId_CheckedChanged);
-            // 
-            // LBFiltro
-            // 
-            this.LBFiltro.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBFiltro.Location = new System.Drawing.Point(27, 49);
-            this.LBFiltro.Name = "LBFiltro";
-            this.LBFiltro.Size = new System.Drawing.Size(334, 16);
-            this.LBFiltro.TabIndex = 31;
+            this.TxtFiltro.Location = new System.Drawing.Point(27, 68);
+            this.TxtFiltro.Name = "TxtFiltro";
+            this.TxtFiltro.Size = new System.Drawing.Size(394, 20);
+            this.TxtFiltro.TabIndex = 27;
             // 
             // FormTransportadora
             // 

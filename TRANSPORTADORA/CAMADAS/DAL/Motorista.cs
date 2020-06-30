@@ -34,7 +34,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                     motorista.telefone = dados["telefone"].ToString();
                     motorista.validadeCnh = Convert.ToDateTime(dados["validadeCnh"].ToString());
                     motorista.salario = Convert.ToSingle(dados["salario"].ToString());
-                    //motorista.comissao = Convert.ToSingle(dados["comissao"].ToString());
+                    
 
                     listMotorista.Add(motorista);
                 }
@@ -65,7 +65,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                 conexao.Open();
                 SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-                while (dados.Read())
+                while(dados.Read())
                 {
                     MODEL.Motorista motorista = new MODEL.Motorista();
                     motorista.id = Convert.ToInt32(dados["id"].ToString());
@@ -73,7 +73,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                     motorista.telefone = dados["telefone"].ToString();
                     motorista.validadeCnh = Convert.ToDateTime(dados["validadeCnh"].ToString());
                     motorista.salario = Convert.ToSingle(dados["salario"].ToString());
-                    //motorista.comissao = Convert.ToSingle(dados["comissao"].ToString());
+                    
 
                     listMotorista.Add(motorista);
                 }
@@ -89,6 +89,42 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             }
 
             return listMotorista;
+        }
+
+        public MODEL.Motorista SelectIDNome(int id)
+        {
+            MODEL.Motorista motorista = new MODEL.Motorista();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT *FROM Motorista WHERE id=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (dados.Read())
+                {                    
+                    motorista.id = Convert.ToInt32(dados["id"].ToString());
+                    motorista.nome = dados["nome"].ToString();
+                    motorista.telefone = dados["telefone"].ToString();
+                    motorista.validadeCnh = Convert.ToDateTime(dados["validadeCnh"].ToString());
+                    motorista.salario = Convert.ToSingle(dados["salario"].ToString());                    
+                                       
+                }
+            }
+
+            catch
+            {
+                Console.WriteLine("ERRO AO CONSULTAR O BANCO DE DADOS!");
+            }
+            finally
+            {
+
+            }
+
+            return motorista;
         }
 
         public List<MODEL.Motorista> SelectByNome(string nome)
@@ -111,7 +147,6 @@ namespace TRANSPORTADORA.CAMADAS.DAL
                     motorista.telefone = dados["telefone"].ToString();
                     motorista.validadeCnh = Convert.ToDateTime(dados["validadeCnh"].ToString());
                     motorista.salario = Convert.ToSingle(dados["salario"].ToString());
-                    //motorista.comissao = Convert.ToSingle(dados["comissao"].ToString());
 
                     listMotorista.Add(motorista);
                 }
@@ -138,8 +173,7 @@ namespace TRANSPORTADORA.CAMADAS.DAL
             cmd.Parameters.AddWithValue("@nome", motorista.nome);
             cmd.Parameters.AddWithValue("@telefone", motorista.telefone);
             cmd.Parameters.AddWithValue("@salario", motorista.salario);
-            cmd.Parameters.AddWithValue("@validadeCnh", motorista.validadeCnh);
-            cmd.Parameters.AddWithValue("@comissao", motorista.comissao);
+            cmd.Parameters.AddWithValue("@validadeCnh", motorista.validadeCnh);            
 
             try
             {

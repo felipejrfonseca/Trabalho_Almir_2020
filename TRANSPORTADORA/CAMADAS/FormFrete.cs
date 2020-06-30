@@ -193,7 +193,7 @@ namespace TRANSPORTADORA.CAMADAS
             cmbMotorista.ValueMember = "id";
             cmbMotorista.DataSource = dalMotorista.Select();
 
-            cmbTransportadora.DisplayMember = "nomeTransportadora";
+            cmbTransportadora.DisplayMember = "transportadoraNome";
             cmbTransportadora.ValueMember = "id";
             cmbTransportadora.DataSource = dalTransportadora.Select();
         }

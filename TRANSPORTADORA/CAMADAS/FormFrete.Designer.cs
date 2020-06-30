@@ -55,6 +55,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
@@ -67,6 +68,7 @@
             // 
             // cmbTransportadora
             // 
+            this.cmbTransportadora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbTransportadora.DisplayMember = "id";
             this.cmbTransportadora.FormattingEnabled = true;
             this.cmbTransportadora.Location = new System.Drawing.Point(697, 67);
@@ -78,6 +80,7 @@
             // 
             // txtLocalPartida
             // 
+            this.txtLocalPartida.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLocalPartida.Location = new System.Drawing.Point(283, 98);
             this.txtLocalPartida.Name = "txtLocalPartida";
             this.txtLocalPartida.Size = new System.Drawing.Size(236, 20);
@@ -86,6 +89,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -98,6 +102,7 @@
             // 
             // txtProduto
             // 
+            this.txtProduto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProduto.Location = new System.Drawing.Point(283, 67);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.Size = new System.Drawing.Size(236, 20);
@@ -106,6 +111,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -118,6 +124,7 @@
             // 
             // txtID
             // 
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(283, 30);
             this.txtID.Name = "txtID";
@@ -127,6 +134,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -139,6 +147,7 @@
             // 
             // DGFrete
             // 
+            this.DGFrete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DGFrete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGFrete.Location = new System.Drawing.Point(12, 268);
             this.DGFrete.Name = "DGFrete";
@@ -182,6 +191,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -193,6 +203,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
@@ -204,6 +215,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
@@ -215,6 +227,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
@@ -226,6 +239,7 @@
             // 
             // cmbMotorista
             // 
+            this.cmbMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMotorista.DisplayMember = "id";
             this.cmbMotorista.FormattingEnabled = true;
             this.cmbMotorista.Location = new System.Drawing.Point(697, 30);
@@ -237,6 +251,7 @@
             // 
             // txtLocalEntrega
             // 
+            this.txtLocalEntrega.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLocalEntrega.Location = new System.Drawing.Point(283, 135);
             this.txtLocalEntrega.Name = "txtLocalEntrega";
             this.txtLocalEntrega.Size = new System.Drawing.Size(236, 20);
@@ -244,6 +259,7 @@
             // 
             // DTData
             // 
+            this.DTData.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DTData.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTData.Location = new System.Drawing.Point(283, 166);
             this.DTData.Name = "DTData";
@@ -253,6 +269,7 @@
             // 
             // txtValor
             // 
+            this.txtValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtValor.Location = new System.Drawing.Point(697, 172);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(137, 20);
@@ -260,6 +277,7 @@
             // 
             // txtIDMotorista
             // 
+            this.txtIDMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIDMotorista.Location = new System.Drawing.Point(711, 94);
             this.txtIDMotorista.Name = "txtIDMotorista";
             this.txtIDMotorista.Size = new System.Drawing.Size(37, 20);
@@ -269,6 +287,7 @@
             // 
             // txtIDTransportadora
             // 
+            this.txtIDTransportadora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIDTransportadora.Location = new System.Drawing.Point(754, 94);
             this.txtIDTransportadora.Name = "txtIDTransportadora";
             this.txtIDTransportadora.Size = new System.Drawing.Size(37, 20);

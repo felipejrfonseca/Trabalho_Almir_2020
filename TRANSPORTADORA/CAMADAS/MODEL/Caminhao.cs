@@ -12,6 +12,8 @@ namespace TRANSPORTADORA.CAMADAS.MODEL
         public string placa { get; set; }
         public string modelo { get; set; }
         public int cor { get; set; }
+        public string nomeCor { get; set; }
         public int motorista { get; set; }
+        public string nomeMotorista { get; set; }
     }
 }
